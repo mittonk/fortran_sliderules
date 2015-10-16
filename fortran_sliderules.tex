@@ -1,6 +1,7 @@
 \documentclass{beamer}
 \usepackage{listings}
 \usepackage{tabulary}
+\usepackage{bm}
 
 
 \mode<presentation>
@@ -11,6 +12,16 @@
   \setbeamercovered{transparent}
   % \setbeamercovered{invisible}
   % or whatever (possibly just delete it)
+}
+
+
+% http://tex.stackexchange.com/questions/160825/modifying-margins-for-one-slide
+\newcommand\Wider[2][3em]{%
+\makebox[\linewidth][c]{%
+  \begin{minipage}{\dimexpr\textwidth+#1\relax}
+  \raggedright#2
+  \end{minipage}%
+  }%
 }
 
 
@@ -54,24 +65,6 @@
 
 
 
-% If you have a file called "university-logo-filename.xxx", where xxx
-% is a graphic format that can be processed by latex or pdflatex,
-% resp., then you can add a logo as follows:
-
-% \pgfdeclareimage[height=0.5cm]{university-logo}{university-logo-filename}
-% \logo{\pgfuseimage{university-logo}}
-
-
-
-% Delete this, if you do not want the table of contents to pop up at
-% the beginning of each subsection:
-%\AtBeginSubsection[]
-%{
-%  \begin{frame}<beamer>{Outline}
-%    \tableofcontents[currentsection,currentsubsection]
-%  \end{frame}
-%}
-
 
 % If you wish to uncover everything in a step-wise fashion, uncomment
 % the following command: 
@@ -95,35 +88,20 @@
 
 \subsection{Computers were big}
 
-% \begin{frame}{Computers were big.}
-%     % http://www.columbia.edu/cu/computinghistory/704-llnl.jpg
-%     \includegraphics{images/columbia_704-llnl}
-% \end{frame}
-
 \begin{frame}[plain]
-    \begin{centering}
-        % http://www.columbia.edu/cu/computinghistory/704-llnl.jpg
-        \pgfimage[height=\paperheight]{images/columbia_704-llnl}
-        \par
-    \end{centering}
-\end{frame}
-
-
-\begin{frame}[plain]
-    \begin{centering}
-        % http://www.fortran.com/ibm3.jpg
-        \pgfimage[width=\paperwidth]{images/fortran_ibm3}
-        \par
-    \end{centering}
+    % http://www.columbia.edu/cu/computinghistory/704-llnl.jpg
+    \Wider{\includegraphics[height=\paperheight]{images/columbia_704-llnl}}
 \end{frame}
 
 \begin{frame}[plain]
-    \begin{centering}
-        % http://commons.wikimedia.org/wiki/File:Punch_card_Fortran_Uni_Stuttgart_(6).jpg
-        % https://upload.wikimedia.org/wikipedia/commons/7/76/Punch_card_Fortran_Uni_Stuttgart_%286%29.jpg
-        \pgfimage[width=\paperwidth]{images/wikimedia_punchcard}
-        \par
-    \end{centering}
+    % http://www.fortran.com/ibm3.jpg
+    \Wider{\includegraphics[width=\paperwidth]{images/fortran_ibm3}}
+\end{frame}
+
+\begin{frame}[plain]
+    % http://commons.wikimedia.org/wiki/File:Punch_card_Fortran_Uni_Stuttgart_(6).jpg
+    % https://upload.wikimedia.org/wikipedia/commons/7/76/Punch_card_Fortran_Uni_Stuttgart_%286%29.jpg
+    \Wider[5em]{\includegraphics[width=\paperwidth]{images/wikimedia_punchcard}}
 \end{frame}
 
 
@@ -149,7 +127,7 @@ C      Initialize the output array.
     \end{lstlisting}
 \end{frame}
 
-\begin{frame}[fragile]
+\begin{frame}{Significant Fortran versions}
     \begin{tabulary}{\textwidth}{|L|L|L|}
         \hline
         1954-56 & Fortran & 32 statements including arithmetic \texttt{IF}: \newline 
@@ -165,6 +143,31 @@ C      Initialize the output array.
         \hline
         2003-08 & Fortran 2003 / 2008 & Objects, procedure pointers, I/O enhancements \\
         \hline
+        2018 & Fortran 2015 & Tweaks \\
+        \hline
+    \end{tabulary}
+\end{frame}
+
+\begin{frame}{Fortran with legs}
+    \begin{tabulary}{\textwidth}{|L|L|}
+        \hline
+        Basic Linear Algebra Subprograms (BLAS) &
+        Level 1: \(\bm{y} \leftarrow \alpha \bm{x} + \bm{y}\) \newline
+        Level 2: \(\bm{y} \leftarrow \alpha {A} \bm{x} + \beta \bm{y}\) \newline
+        Level 3: \({C} \leftarrow \alpha {AB} + \beta {C}\) \\
+        \hline
+
+        Linear Algebra PACKage (LAPACK) &
+        Systems of linear equations \newline
+        Eigenvalue problems \newline
+        Matrix factorizations \\
+        \hline
+
+        Scientific computing, 
+        High Performance Computing &
+        Weather simulations, CFD, MATLAB \\
+        \hline
+
     \end{tabulary}
 \end{frame}
 
