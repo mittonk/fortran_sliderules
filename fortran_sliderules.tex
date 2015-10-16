@@ -1,4 +1,4 @@
-\documentclass{beamer}
+\documentclass[aspectratio=169]{beamer}
 \usepackage{listings}
 \usepackage{tabulary}
 \usepackage{bm}
@@ -14,6 +14,8 @@
   % or whatever (possibly just delete it)
 }
 
+
+\beamertemplatenavigationsymbolsempty
 
 % http://tex.stackexchange.com/questions/160825/modifying-margins-for-one-slide
 \newcommand\Wider[2][3em]{%
@@ -90,12 +92,13 @@
 
 \begin{frame}[plain]
     % http://www.columbia.edu/cu/computinghistory/704-llnl.jpg
-    \Wider{\includegraphics[height=\paperheight]{images/columbia_704-llnl}}
+    % \includegraphics[height=\paperheight]{images/columbia_704-llnl}
+    \includegraphics[width=0.8\paperwidth]{images/columbia_704-llnl}
 \end{frame}
 
 \begin{frame}[plain]
     % http://www.fortran.com/ibm3.jpg
-    \Wider{\includegraphics[width=\paperwidth]{images/fortran_ibm3}}
+    \Wider[5em]{\includegraphics[width=\paperwidth]{images/fortran_ibm3}}
 \end{frame}
 
 \begin{frame}[plain]
@@ -135,13 +138,13 @@ C      Initialize the output array.
         \hline
         1958 & Fortran II & Subroutines, Functions \\
         \hline
-        1961-66 & Fortran IV / 66 & More data types, modern \texttt{IF} \\
+        1961-66 & Fortran IV~/~66 & More data types, modern \texttt{IF} \\
         \hline
         1978 & Fortran 77 & \texttt{CHARACTER} type \\
         \hline
-        1991-97 & Fortran 90/95 & Free-format source, Modules, \texttt{POINTER}, dynamic memory allocation \\
+        1991-97 & Fortran 90~/~95 & Free-format source, Modules, \texttt{POINTER}, dynamic memory allocation \\
         \hline
-        2003-08 & Fortran 2003 / 2008 & Objects, procedure pointers, I/O enhancements \\
+        2003-08 & Fortran 2003~/~2008 & Objects, procedure pointers, I/O enhancements \\
         \hline
         2018 & Fortran 2015 & Tweaks \\
         \hline
@@ -163,7 +166,7 @@ C      Initialize the output array.
         Matrix factorizations \\
         \hline
 
-        Scientific computing, 
+        Scientific computing,
         High Performance Computing &
         Weather simulations, CFD, MATLAB \\
         \hline
@@ -171,88 +174,98 @@ C      Initialize the output array.
     \end{tabulary}
 \end{frame}
 
-\begin{frame}{Make Titles Informative. Use Uppercase Letters.}{Subtitles are optional.}
-  % - A title should summarize the slide in an understandable fashion
-  %   for anyone how does not follow everything on the slide itself.
-
-  \begin{itemize}
-  \item
-    Use \texttt{itemize} a lot.
-  \item
-    Use very short sentences or short phrases.
-  \end{itemize}
+\begin{frame}{Slide rules}
+    \href{http://www.antiquark.com/sliderule/sim/160es/virtual-160-es.html}{antiquark.com Demo Rule}
 \end{frame}
 
-\begin{frame}{Make Titles Informative.}
+\begin{frame}{Slide rule scales}
+    \begin{tabulary}{\textwidth}{|L|L|L|}
+        \hline
+        C, D &
+        Standard log scales &
+        $*$, $/$ \\
+        \hline
 
-  You can create overlays\dots
-  \begin{itemize}
-  \item using the \texttt{pause} command:
-    \begin{itemize}
-    \item
-      First item.
-      \pause
-    \item    
-      Second item.
-    \end{itemize}
-  \item
-    using overlay specifications:
-    \begin{itemize}
-    \item<3->
-      First item.
-    \item<4->
-      Second item.
-    \end{itemize}
-  \item
-    using the general \texttt{uncover} command:
-    \begin{itemize}
-      \uncover<5->{\item
-        First item.}
-      \uncover<6->{\item
-        Second item.}
-    \end{itemize}
-  \end{itemize}
+        A, B &
+        Two-decade log scales &
+        $x^2$, $\sqrt{x}$ \\
+        \hline
+
+        K &
+        Three-decade &
+        $x^3$, $x^{1/3}$ \\
+        \hline
+
+        CF, DF &
+        Folded log scale, runs from $\pi$ to $10\pi$ &
+        Useful for results near 10 \\
+        \hline
+
+        CI, DI, DIF &
+        "Inverted" log scales &
+        $1/x$ \\
+        \hline
+
+        S, T, ST, SRT &
+        Trig scales &
+        $\sin, \cos, \tan, \sin^{-1}$ ... \\
+        \hline
+
+        L &
+        Linear scale &
+        $\log_{10}, 10^x$ \\
+        \hline
+
+        LLn, $n \in [-3, 3]$ &
+        Log-log scales &
+        $x^y$ \\
+        \hline
+
+        Ln &
+        Linear scale &
+        $e^x, \ln x$ \\
+        \hline
+
+    \end{tabulary}
 \end{frame}
 
+\begin{frame}{Designations}
+    \begin{tabulary}{\textwidth}{|L|L|}
+        \hline
+        Mannheim &
+        C, D, A, B \\
+        \hline
 
-\subsection{Second Subsection}
+        Polyphase &
+        adds K, CI \\
+        \hline
 
-\begin{frame}{Make Titles Informative.}
+        Trig
+        Decitrig &
+        S, ST, T
+        (in tenths of a degree) \\
+        \hline
+
+        Log Log &
+        LLn \\
+        \hline
+
+        Duplex &
+        2-sided \\
+        \hline
+
+    \end{tabulary}
 \end{frame}
 
-\begin{frame}{Make Titles Informative.}
+\begin{frame}[plain]
+    % https://upload.wikimedia.org/wikipedia/commons/f/f7/Circular_slide_rule.JPG
+    \Wider[-15em]{\includegraphics[height=\paperheight]{images/wikimedia_circular_slide_rule}}
 \end{frame}
 
-
-
-\section*{Summary}
-
-\begin{frame}{Summary}
-
-  % Keep the summary *very short*.
-  \begin{itemize}
-  \item
-    The \alert{first main message} of your talk in one or two lines.
-  \item
-    The \alert{second main message} of your talk in one or two lines.
-  \item
-    Perhaps a \alert{third message}, but not more than that.
-  \end{itemize}
-  
-  % The following outlook is optional.
-  \vskip0pt plus.5fill
-  \begin{itemize}
-  \item
-    Outlook
-    \begin{itemize}
-    \item
-      Something you haven't solved.
-    \item
-      Something else you haven't solved.
-    \end{itemize}
-  \end{itemize}
+\begin{frame}[plain]
+    % http://www.hpmuseum.org/big/fullclse.jpg
+    \Wider[5em]{\includegraphics[height=\paperheight]{images/hpmuseum_cylindrical}}
 \end{frame}
-
 
 \end{document}
 
